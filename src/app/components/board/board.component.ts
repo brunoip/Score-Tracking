@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './board.component.html',
   styleUrl: './board.component.css'
 })
+
 export class BoardComponent implements OnInit {
   results = {};
   newPlayer : Player;
@@ -68,9 +69,6 @@ export class BoardComponent implements OnInit {
 
   openEditPlayerModal(player: Player)
   {
-    console.log(player.id);
-    console.log(this.newPlayer.id );
-
     this.modalTitle = "Edit Player";
     this.modalEdit = true;
     if(player != null)
@@ -96,7 +94,6 @@ export class BoardComponent implements OnInit {
   showNewPlayerModal()
   {
     this.modifyScore = 0;
-    console.log("show click");
     const modalButton = document.getElementById('modalButton');
     if(modalButton != null)
     {
@@ -106,7 +103,6 @@ export class BoardComponent implements OnInit {
 
   saveNewPlayerModal()
   {
-    console.log("save click");
     const newPlayerModal = document.getElementById('modalWindow');
     if(newPlayerModal != null){
       if(!this.list.find(x => x.id === this.newPlayer.id))
@@ -137,7 +133,8 @@ export class BoardComponent implements OnInit {
   colorOrder(num: number)
   {
     var out=num-1;
-    while(out >= 9) out=out-10;
+    while(out >= 9) 
+      out=out-10;
     return out+1;
   }
 }
