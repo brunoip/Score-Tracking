@@ -1,0 +1,83 @@
+<div class="header">
+    <div class="info">
+      <h1>Score App</h1>
+    </div>
+    <div class="actionBar">
+      <button type="button" id="modalButton" style="visibility: hidden;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWindow"></button> 
+      <!-- <a ><span class="material-icons headerIcon">numbers</span></a> -->
+      <a (click)="orderList()"><span class="material-icons headerIcon">swap_vert</span></a>
+      <!-- <a (click)="openNewPlayerModal()"><span class="material-icons headerIcon">history</span></a> -->
+      <a (click)="openNewPlayerModal()"><span class="material-icons headerIcon">person_add</span></a>
+    </div>
+  </div>
+
+  <div *ngIf="list.length==0" class="emptyListtext">
+    <h2>Add a new player to start scoring.</h2>
+  </div>
+  
+  <div class="list"  *ngFor="let player of list" role="listitem"> 
+    <div class="player" [style.backgroundColor]=player.color>
+      <div class="left"> 
+          <a (click)="decreaseScore(player, 1)"><span class="material-icons">remove</span></a>
+      </div>
+      <div class="middle"> 
+        <a (click)="openEditPlayerModal(player)">
+          <div class="name" matListItemTitle>{{player.name}}</div>
+          <div class="score" matListItemLine>{{player.score}}</div>
+        </a>
+      </div>
+      <div class="right">
+          <a (click)="increaseScore(player, 1)"><span class="material-icons">add</span></a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- The Modal -->
+  <div class="modal" id="modalWindow">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">{{modalTitle}}</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <label for="nameImput">Name:</label><br>
+          <input type="text" id="nameImput" [(ngModel)]="newPlayer.name"><br>
+          <label class="modalInputNumber" for="scoreInput">{{modalEdit?"Current score:":"Initial score:"}}</label><br>
+          <input type="number" id="scoreInput" [(ngModel)]="newPlayer.score">
+          <div  *ngIf="modalEdit">
+            <label class="modalInputNumber" for="scoreIncreaseInput">Increase score:</label><br>
+            <input type="number" id="scoreIncreaseInput" [(ngModel)]="modifyScore">
+          </div>
+  
+  
+          <!-- Define list of color options -->
+          <datalist id="colors">
+              <option *ngFor="let color of optionColors" [value]="color"></option>
+          </datalist>
+  
+          <!-- attach options to color picker 'list="colors"' -->
+          <div class="colorpicker-wrapper">
+            <input type="color" id="colorpicker" class="colorpicker" name="head" value=newPlayer.color list="colors" [(ngModel)]="newPlayer.color">
+            <label for="colorpicker">Player color</label>
+          </div>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <div  *ngIf="modalEdit">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deletePlayer()">Delete</button>
+          </div>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="closeNewPlayerModal()">Close</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="saveNewPlayerModal()">Save</button>
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,25 @@
+
+.main{
+    flex-direction: column;   
+    background-color: #efefef;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-width: 480px;
+    margin:  0px auto 0px auto;
+}
+
+.content{
+    width: 100%; /* Ensure it doesn't overflow */
+}
+
+@media (max-width: 480px) {
+    .main {
+        max-width: 100%; /* Ensures full width on mobile */
+    }
+}
+
+::ng-deep * {
+    margin: 0;
+    padding: 0;
+}

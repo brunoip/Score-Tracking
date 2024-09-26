@@ -1,0 +1,118 @@
+.header{
+    margin: 4px 4px 8px 4px;
+    display: flex;
+}
+
+h1{
+    font-size: 32px;
+    margin: 0px;
+}
+
+h2{
+    font-size: 22px;
+    margin: 52px 32px 32px 32px;
+    text-align: center;
+    color: gray;
+}
+
+.actionBar{
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.player{
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    padding: 6px;
+    margin: 4px;
+    color: #efefef;
+}
+
+a{
+    cursor: pointer;
+}
+
+input{
+    padding-left: 4px;
+}
+
+.left{            
+    vertical-align: middle;
+    line-height: 1px;
+    width: 10%;
+    margin: auto;
+}
+
+.right{            
+    vertical-align: middle;
+    line-height: 1px;
+    width: 10%;
+    margin: auto;
+}
+
+.middle{
+    width: 80%;
+    margin: 0 20px;
+}
+
+.material-icons {
+    font-size: 18px;  
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    -moz-text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    -webkit-text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.headerIcon{    
+    cursor: pointer;
+    font-size: 28px;  
+    text-shadow: none;
+    margin: 0 4px;
+    padding: 2px;
+    padding-left: 8px;
+}
+
+.score{
+    margin-top: 0px;
+    font-size: 26px;  
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    -moz-text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    -webkit-text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.name{
+    font-size: 18px;  
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    -moz-text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    -webkit-text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.modal-dialog{
+    max-width: 420px;
+    border-radius: 0px;
+}
+
+.modalInputNumber {
+    margin-top: 12px;
+}
+.colorpicker-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    margin-top: 12px;
+  }
+  
+  .colorpicker {
+    padding: 0;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .colorpicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  .colorpicker::-webkit-color-swatch {
+    border: none;
+  }
