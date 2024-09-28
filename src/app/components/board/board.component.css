@@ -37,6 +37,10 @@ input{
     padding-left: 4px;
 }
 
+input:read-only{
+    color: gray;
+}
+
 .left{            
     vertical-align: middle;
     line-height: 1px;

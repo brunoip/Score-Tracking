@@ -48,7 +48,7 @@
           <label for="nameImput">Name:</label><br>
           <input type="text" id="nameImput" [(ngModel)]="newPlayer.name"><br>
           <label class="modalInputNumber" for="scoreInput">{{modalEdit?"Current score:":"Initial score:"}}</label><br>
-          <input type="number" id="scoreInput" [(ngModel)]="newPlayer.score">
+          <input type="number" id="scoreInput" [readonly]="modalEdit" [(ngModel)]="newPlayer.score">
           <div  *ngIf="modalEdit">
             <label class="modalInputNumber" for="scoreIncreaseInput">Increase score:</label><br>
             <input type="number" id="scoreIncreaseInput" [(ngModel)]="modifyScore">
